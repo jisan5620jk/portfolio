@@ -20,7 +20,7 @@
     });
   });
 
-  // counterUp
+  // Odometer CounterUp
   $(document).ready(function () {
     $(".odometer-wrapper").appear(function () {
       let count = $(this).attr("data-count");

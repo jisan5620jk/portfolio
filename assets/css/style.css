@@ -92,7 +92,8 @@ body.video5::before {
   text-transform: uppercase;
   color: #ffffff;
   font-weight: 500;
-  background: #141a18;
+  background: transparent;
+  backdrop-filter: blur(8px);
   display: inline-block;
   padding: 5px 20px;
   border-radius: 30px;
@@ -141,16 +142,22 @@ section.portfolio-sidebar {
   padding: 42px 0 38px;
 }
 
-.portfolio-profile-thumb img {
+.portfolio-profile-thumb {
   border-radius: 50%;
-  border: 7px solid #4e5752;
+  border: 7px solid;
+  border-color: #4e5752;
   transition: 0.5s;
-  filter: saturate(0);
-  width: 220px;
+  display: inline-block;
+  overflow: hidden;
 }
 
-.portfolio-profile-thumb img:hover {
+.portfolio-profile-thumb:hover {
   border-color: var(--primary-color);
+}
+
+.portfolio-profile-thumb img {
+  filter: saturate(0);
+  width: 220px;
 }
 
 .portfolio-profile-title h4 {
@@ -597,7 +604,8 @@ section.services-section {
 .services-single-box {
   display: flex;
   border-radius: 15px;
-  background-color: #141a17;
+  background: transparent;
+  backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.23);
   padding: 50px;
   transition: 0.5s;
@@ -714,7 +722,8 @@ section.skill-section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #141a17;
+  background: #141a17;
+  backdrop-filter: blur(8px);
   content: "";
   border-radius: 15px 60px 15px 15px;
   transition: 0.5s;
@@ -885,7 +894,8 @@ section.testimonial-section {
 
 .testimonial-box {
   border-radius: 20px;
-  background-color: #141a17;
+  background: transparent;
+  backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.23);
   padding: 45px 45px 34px;
   position: relative;
@@ -1007,7 +1017,8 @@ section.pricing-section {
 
 .pricing-single-box {
   border-radius: 15px;
-  background-color: #141a17;
+  background: transparent;
+  backdrop-filter: blur(8px);
   padding: 35px;
   border: 1px solid rgba(255, 255, 255, 0.23);
   position: relative;
@@ -1090,7 +1101,8 @@ section.pricing-section {
 
 .pricing-box-btn a {
   border-radius: 26px;
-  background-color: #141a17;
+  background: transparent;
+  backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.23);
   text-align: center;
   font-size: 16px;
@@ -1133,7 +1145,8 @@ section.pricing-section {
   color: var(--primary-color);
   font-weight: 600;
   border-radius: 20px;
-  background-color: #141a17;
+  background: transparent;
+  backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.23);
   display: inline-block;
   padding: 4px 22px;
@@ -1207,7 +1220,8 @@ section.pricing-section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #141a17;
+  background: #141a17;
+  backdrop-filter: blur(8px);
   transition: 0.5s;
   border-radius: 10px;
   z-index: -1;
@@ -1239,7 +1253,8 @@ section.contact-section {
 
 form.contact-form {
   border-radius: 20px;
-  background-color: #141a17;
+  background: #2a2e2c36;
+  backdrop-filter: blur(8px);
   padding: 30px 30px 40px;
   border: 1px solid rgba(255, 255, 255, 0.23);
   margin-top: 66px;
@@ -1288,6 +1303,7 @@ form.contact-form textarea::placeholder {
   padding: 10px 20px;
   margin-bottom: 30px;
   resize: none;
+  color: #fff;
 }
 
 .contact-form-btn {

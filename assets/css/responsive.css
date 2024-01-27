@@ -7,11 +7,14 @@
 
   button.settings_btn.headers-button {
     top: 4rem;
-    left: 16rem;
+    left: 16.5rem;
+  }
+
+  .portfolio-profile-thumb {
+    border: 5px solid;
   }
 
   .portfolio-profile-thumb img {
-    border: 5px solid #4e5752;
     width: 170px;
   }
 
@@ -24,7 +27,7 @@
   }
 
   nav.portfolio-navbar {
-    padding: 50px 90px 50px 90px;
+    padding: 40px 90px 35px 90px;
   }
 
   nav.portfolio-navbar ul li {
