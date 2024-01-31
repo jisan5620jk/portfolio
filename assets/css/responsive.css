@@ -294,8 +294,12 @@
   }
 
   .portfolio-title h1 {
-    font-size: 40px;
+    font-size: 36px;
     line-height: 54px;
+  }
+
+  a.banner-play-btn {
+    margin-top: 30px;
   }
 
   .portfolio-section-title h1 {
@@ -304,22 +308,23 @@
   }
 
   .services-single-box {
-    padding: 20px;
-    gap: 20px;
-  }
-
-  .services-single-box:hover .service-box-content::before {
-    width: 40px;
+    padding: 30px 30px 60px;
+    gap: 30px;
+    flex-direction: column;
   }
 
   .services-single-box:hover .service-box-content {
-    padding-left: 48px;
+    padding-left: 0px;
+  }
+
+  .services-single-box:hover .service-box-content::before {
+    width: 0px;
   }
 
   .service-box-btn a {
-    right: 20px;
+    right: inherit;
+    top: inherit;
   }
-
   section.portfolio-section .portfolio-section-title h1 {
     width: 84%;
   }
@@ -395,6 +400,10 @@
     padding: 14px 20px;
   }
 
+  a.banner-play-btn {
+    margin-top: 30px;
+  }
+
   .portfolio-section-title h1 {
     font-size: 24px;
     line-height: 34px;
@@ -423,6 +432,20 @@
     width: 88%;
   }
 
+  .testimonial-box {
+    padding: 25px 25px 24px;
+    width: 93% !important;
+  }
+
+  .testimonial-profile {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .testimonial-desc p {
+    font-size: 20px;
+  }
+
   .thumb-title h5,
   .thumb-sub-title h6 {
     display: none;
@@ -430,5 +453,9 @@
 
   .pricing-single-box {
     margin-bottom: 30px;
+  }
+
+  .pricing-discount-note h6 {
+    right: 16px;
   }
 }

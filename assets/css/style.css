@@ -9,8 +9,8 @@ Tags: agency, consulting, digital agency, digital marketing, digital marketing a
 
 /*TABLE OF CONTENTS*/
 /*=====================
-01. Portfolio Header Top Menu Section Css
-02. Portfolio Nav Menu Section Css 
+01. Portfolio Header Menu Section Css
+02. Portfolio Sidebar Section Css 
 03. Portfolio Banner Section Css
 04. Portfolio Section Title Css
 05. Portfolio Service Section css
@@ -99,12 +99,23 @@ body.video5::before {
   border-radius: 30px;
   border: 1px solid rgb(255 255 255 / 10%);
   margin-bottom: 28px;
+  transition: 0.5s;
 }
 
 .portfolio-sub-title img {
   padding: 0 6px 0 0;
   position: relative;
   top: -3px;
+  transition: 0.5s;
+}
+
+.portfolio-sub-title h6:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.portfolio-sub-title h6:hover img {
+  filter: var(--primary-filter);
 }
 
 .portfolio-section-title h1 {
@@ -412,7 +423,7 @@ a.banner-play-btn {
 }
 
 .banner-counter {
-  margin-top: 120px;
+  margin-top: 104px;
 }
 
 .counter-box-title {
@@ -434,7 +445,7 @@ a.banner-play-btn {
   color: #bebebe;
   font-weight: 300;
   width: 42%;
-  margin: 22px 0 0;
+  margin: 11px 0 0;
 }
 
 /*<!-- ============================================================== -->
@@ -485,11 +496,11 @@ section.about-section .banner-btn a:hover .btn_label-hover {
 <!-- ============================================================== -->*/
 
 section.resume-section {
-  padding-top: 140px;
+  padding-top: 137px;
 }
 
 .resume-box {
-  margin-top: 46px;
+  margin-top: 68px;
 }
 
 .resume-single-box {
@@ -654,6 +665,7 @@ section.services-section {
   line-height: 32px;
   color: #ffffff;
   font-weight: 700;
+  padding-bottom: 11px;
 }
 
 .service-box-desc p {
