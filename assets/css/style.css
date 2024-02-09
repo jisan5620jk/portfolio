@@ -166,9 +166,14 @@ section.portfolio-sidebar {
   border-color: var(--primary-color);
 }
 
+.portfolio-profile-thumb:hover img {
+  filter: saturate(1);
+}
+
 .portfolio-profile-thumb img {
   filter: saturate(0);
   width: 220px;
+  transition: .5s;
 }
 
 .portfolio-profile-title h4 {

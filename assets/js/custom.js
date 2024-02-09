@@ -19,7 +19,7 @@
       cssEase: "ease",
     });
   });
-
+  
   // Odometer CounterUp
   $(document).ready(function () {
     $(".odometer-wrapper").appear(function () {
@@ -53,13 +53,7 @@
     }
   }, 10);
 
-  // Venubox
 
-  $(".venobox").venobox({
-    numeratio: true,
-
-    infinigall: true,
-  });
 
   //AOS Anomation
   AOS.init();
