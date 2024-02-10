@@ -1,49 +1,30 @@
 /*===============================================
 Template Name: Portfolio - SEO and Digital Marketing Agency HTML5 Template
-Author:  https://templatemonster.com/user/dreamit-solution
+Author:  Portfolio - Creative & Modern Personal Portfolio HTML5 Template
 Description: Description
 Version: 1.0.0
 Text Domain: Portfolio
-Tags: agency, consulting, digital agency, digital marketing, digital marketing agency, marketing, marketing agency, media agency, portfolio, seo, seo agency, seo agency theme, seo marketing, smm, social media marketing agency.
+Tags: portfolio, agency, consulting, digital agency, digital marketing, digital marketing agency, marketing, marketing agency, media agency,personal portfolio, seo, seo agency, seo agency theme, seo marketing, smm, social media marketing agency.
 ================================================*/
 
 /*TABLE OF CONTENTS*/
 /*=====================
-01. Portfolio Header Menu Section Css
-02. Portfolio Sidebar Section Css 
-03. Portfolio Banner Section Css
-04. Portfolio Section Title Css
-05. Portfolio Service Section css
-06. Portfolio About Section Css
-07. Portfolio Counter Section Css
-08. Portfolio Case Study Section Css
-09. Portfolio Testimonial Section Css
-10. Portfolio Process Section Css
-11. Portfolio Team Section Css
-12. Portfolio Faq Section Css
-13. Portfolio Brand Section Css
-14. Portfolio Call Do Section Css
-15. Portfolio Form Box Css
-16. Portfolio Skill Section Css
-17. Portfolio Blog Section Css
-18. Portfolio footer Section Css
-19. Portfolio Subscribe Section Css
-20. Portfolio Lines CSS
-21. Portfolio Prossess Ber Css
-22. Portfolio Scrollup Section
-23. Portfolio Bounce Animation Css 
-24. Portfolio Animation Dance
-25. Portfolio Breadcumb Section Css
-26. Portfolio abouts_Sections Css
-27. Portfolio Feture-Section Css
-28. Portfolio Pricing Section Css
-29. Portfolio Web Development Section CSS
-30. Portfolio Contact  US Css
-31. Portfolio Blog Sidber Widget CSS
-32. Portfolio Case Study Details Css
-33. Portfolio Search Box Css
-34. Portfolio Loader Css
-=======================*/
+01. Portfolio Reset Code & Common
+02. Portfolio Portfolio Sidebar Start
+03. Portfolio Banner Start
+04. Portfolio About Start
+05. Portfolio Service Start
+06. Portfolio Skill Start
+07. Portfolio Start
+08. Portfolio Testimonial Start
+09. Portfolio Pricing Start
+10. Portfolio Brand Start
+11. Portfolio Contact Start
+12. Slick Dots
+13. curser Animation
+14. Portfolio animation start
+
+============================*/
 
 /*<!-- ============================================================== -->
  <!-- Portfolio Reset Code & Common Start Here -->
@@ -897,7 +878,7 @@ section.portfolio-section .portfolio-section-title h1 {
 <!-- ============================================================== -->*/
 
 /*<!-- ============================================================== -->
- <!-- Portfolio End Here -->
+ <!-- Portfolio Testimonial Start Here -->
 <!-- ============================================================== -->*/
 
 section.testimonial-section {
@@ -1017,7 +998,7 @@ span.slick-next:hover {
 }
 
 /*<!-- ============================================================== -->
- <!-- Portfolio End Here -->
+ <!-- Portfolio Testimonial End Here -->
 <!-- ============================================================== -->*/
 
 /*<!-- ============================================================== -->
