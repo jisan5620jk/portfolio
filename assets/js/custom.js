@@ -1,7 +1,103 @@
 (function () {
   ("use strict");
 
-  //Optimization Slider
+  // Disable right-click
+  // document.addEventListener('contextmenu', (event) => {
+  //   event.preventDefault();
+  // });
+
+  // // Disable common Developer Tools shortcuts (F12, Ctrl+Shift+I, Ctrl+U)
+  // document.addEventListener('keydown', (event) => {
+  //   const forbiddenKeys = ['F12', 'I', 'i', 'U', 'u'];
+
+  //   // Check for Ctrl+Shift+Key or Ctrl+Key combinations
+  //   const isCtrlShiftCombo =
+  //     event.ctrlKey && event.shiftKey && forbiddenKeys.includes(event.key);
+  //   const isCtrlCombo = event.ctrlKey && forbiddenKeys.includes(event.key);
+
+  //   if (event.key === 'F12' || isCtrlShiftCombo || isCtrlCombo) {
+  //     event.preventDefault();
+  //     alert(
+  //       'Developer tools are disabled. Please respect the website’s security!'
+  //     );
+  //   }
+  // });
+
+  // // Detect if Developer Tools are open
+  // const detectDevTools = () => {
+  //   const widthThreshold = window.outerWidth - window.innerWidth > 200;
+  //   const heightThreshold = window.outerHeight - window.innerHeight > 200;
+
+  //   if (widthThreshold || heightThreshold) {
+  //     alert('Developer tools are detected! Taking action now...');
+  //     window.location.href = 'about:blank'; // Redirect or close the page
+  //   }
+  // };
+
+  // Periodically check for Developer Tools every second
+  // setInterval(detectDevTools, 1000);
+
+  let device_width = window.innerWidth;
+
+  // 21. gsap register
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+  // 22. gsap config
+  gsap.config({
+    nullTargetWarn: false,
+    debug: false,
+  });
+
+  //Comment me out to see issue
+  const smoother = ScrollSmoother.create({
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+    smooth: 2,
+    normalizeScroll: true,
+    ignoreMobileResize: true,
+    effects: true,
+    preventDefault: true,
+  });
+
+  if (device_width > 576) {
+    const smoother = ScrollSmoother.create({
+      smooth: 2.2,
+      effects: device_width < 992 ? false : true,
+      smoothTouch: false,
+      normalizeScroll: false,
+      ignoreMobileResize: true,
+    });
+  }
+
+  let targetElement = document.getElementById("smooth-content");
+
+  if (targetElement) {
+    gsap.to(window, { duration: 1, scrollTo: { y: "#" + targetElement.id } });
+  } else {
+    gsap.to(window, { duration: 1, scrollTo: 0 });
+  }
+
+  // Wait for the DOM to fully load
+  document.addEventListener("DOMContentLoaded", function () {
+    // Add click event to all menu links
+    document.querySelectorAll(".portfolio-navbar ul li a").forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault(); // Prevent default anchor click behavior
+
+        const targetId = this.getAttribute("href");
+        const targetSection = document.querySelector(targetId);
+
+        // Use GSAP to animate the scroll
+        gsap.to(window, {
+          duration: 1,
+          scrollTo: { y: targetSection, autoKill: false },
+          ease: "power2.inOut",
+        });
+      });
+    });
+  });
+
+  //Testimonial Slider
   $(document).ready(function () {
     $(".testimonial-slider").slick({
       dots: true,
@@ -19,7 +115,50 @@
       cssEase: "ease",
     });
   });
-  
+
+  //Pricing Slider
+  $(document).ready(function () {
+    $(".pricing-box-slider").slick({
+      dots: true,
+      infinite: true,
+      autoplay: false,
+      autoplaySpeed: 3000,
+      arrows: true,
+      prevArrow:
+        '<span class="slick-prev"><i class="bi bi-arrow-right"></i></span>',
+      nextArrow:
+        '<span class="slick-next"><i class="bi bi-arrow-left"></i></span>',
+      speed: 1000,
+      fade: false,
+      margin: 26,
+      slidesToShow: 3,
+      cssEase: "ease",
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+    });
+  });
+
   // Odometer CounterUp
   $(document).ready(function () {
     $(".odometer-wrapper").appear(function () {
@@ -53,7 +192,13 @@
     }
   }, 10);
 
+  // Venubox
 
+  $(".venobox").venobox({
+    numeratio: true,
+
+    infinigall: true,
+  });
 
   //AOS Anomation
   AOS.init();
@@ -85,27 +230,4 @@
     observer.observe(section);
   });
 
-  //Go TO Top
-
-  $(document).ready(function () {
-    $(".scroll-top-inner").on("click", function () {
-      $("html, body").animate({ scrollTop: 0 }, 500);
-      return false;
-    });
-
-    function handleScrollbar() {
-      const bHeight = $("body").height();
-      const scrolled = $(window).innerHeight() + $(window).scrollTop();
-
-      let percentage = (scrolled / bHeight) * 100;
-
-      if (percentage > 100) percentage = 100;
-
-      $(".scroll-top-inner .bar-inner").css("width", percentage + "%");
-    }
-
-    $(window).on("scroll", function () {
-      handleScrollbar();
-    });
-  });
 })(window.jQuery);
