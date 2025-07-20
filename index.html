@@ -7,7 +7,7 @@
     <meta name="robots" content="max-image-preview:large" />
     <meta
       name="keywords"
-      content="creative, agency, portfolio, personal portfolio, digital, it solution, business, startup, design, develope,, jisankhan, jisan khan, modern, advanced, creative digital agency, creative agency, digital agency"
+      content="creative, agency, portfolio, personal portfolio, digital, it solution, business, startup, design, develope,, Jillurkhan, Jillur Rahman, modern, advanced, creative digital agency, creative agency, digital agency"
     />
     <meta
       name="description"
@@ -15,7 +15,7 @@
     />
     <meta
       name="name"
-      content="Hi! I'm Jisan, a Website Developer passionate about creating modern, responsive, and user-friendly websites. With a focus on clean design and seamless functionality, I strive to bring ideas to life through web development. Welcome! "
+      content="Hi! I'm Jillur, a Website Developer passionate about creating modern, responsive, and user-friendly websites. With a focus on clean design and seamless functionality, I strive to bring ideas to life through web development. Welcome! "
     />
 
     <meta
@@ -25,7 +25,7 @@
 
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
 
-    <title>Jisan Khan - Hi! I'm Jisan, a Website Developer. Welcome!</title>
+    <title>Jillur Rahman - Hi! I'm Jillur, a Website Developer. Welcome!</title>
     <!-- Favicon -->
     <link
       rel="icon"
@@ -150,7 +150,7 @@
           />
         </div>
         <div class="portfolio-profile-title">
-          <h4>Jisan Khan</h4>
+          <h4>Jillur Rahman</h4>
         </div>
       </div>
       <nav class="portfolio-navbar">
@@ -240,7 +240,7 @@
       <div class="portfolio-social">
         <ul>
           <li>
-            <a target="_blank" href="https://www.facebook.com/jisankhan.net"
+            <a target="_blank" href="https://www.facebook.com/Jillurkhan.net"
               ><i class="fab fa-facebook-f"></i
             ></a>
           </li>
@@ -282,7 +282,7 @@
                   </div>
                   <div class="portfolio-title" data-aos="fade-down">
                     <h1>
-                      Hi, I'm <span>Jisan</span>! <br />
+                      Hi, I'm <span>Jillur</span>! <br />
                       Front-End <span>Developer</span> <br />
                       Based in Bangladesh
                     </h1>
@@ -881,7 +881,7 @@
                   </div>
                   <div class="portfolio-section-title" data-aos="fade-down">
                     <h1>
-                      Helping Digital Brands Scale With <span>Design</span>
+                      Helping Digital Brands<br />Scale With <span>Design</span>
                     </h1>
                   </div>
                   <div class="portfolio-item">
@@ -1467,7 +1467,8 @@
                           type="text"
                           name="name"
                           id="name"
-                          placeholder="My Name"
+                          placeholder="Your Name"
+                          required
                         />
                       </div>
                       <div class="contact-form-number" data-aos="fade-down">
@@ -1476,7 +1477,7 @@
                           type="text"
                           name="number"
                           id="number"
-                          placeholder="My Number"
+                          placeholder="Your Number"
                         />
                       </div>
                     </div>
@@ -1486,7 +1487,7 @@
                         type="email"
                         name="email"
                         id="email"
-                        placeholder="My E-Mail Address*"
+                        placeholder="Your E-Mail Address*"
                         required
                       />
                     </div>
@@ -1496,7 +1497,7 @@
                         type="text"
                         name="subject"
                         id="subject"
-                        placeholder="My Subject*"
+                        placeholder="Your Subject*"
                         required
                       />
                     </div>
@@ -1505,8 +1506,11 @@
                       <textarea
                         name="message"
                         id="message"
-                        placeholder="Write A Message"
+                        placeholder="Write A Message..."
                       ></textarea>
+                    </div>
+                    <div class="contact-check-box">
+                      <label for="checkBox"><input type="checkbox" /></label>
                     </div>
                     <div class="contact-form-btn">
                       <button type="submit">Sent Message</button>
@@ -1519,6 +1523,56 @@
           <!--==================================================-->
           <!-- End Portfolio Contact Section Here -->
           <!--==================================================-->
+
+          <div id="frmContact">
+            <div id="mail-status"></div>
+            <div>
+              <label style="padding-top: 20px">Name</label
+              ><span id="userName-info" class="info"></span><br />
+              <input
+                type="text"
+                name="userName"
+                id="userName"
+                class="demoInputBox"
+              />
+            </div>
+            <div>
+              <label>Email</label><span id="userEmail-info" class="info"></span
+              ><br />
+              <input
+                type="text"
+                name="userEmail"
+                id="userEmail"
+                class="demoInputBox"
+              />
+            </div>
+            <div>
+              <label>Subject</label><span id="subject-info" class="info"></span
+              ><br />
+              <input
+                type="text"
+                name="subject"
+                id="subject"
+                class="demoInputBox"
+              />
+            </div>
+            <div>
+              <label>Content</label><span id="content-info" class="info"></span
+              ><br />
+              <textarea
+                name="content"
+                id="content"
+                class="demoInputBox"
+                cols="60"
+                rows="6"
+              ></textarea>
+            </div>
+            <div>
+              <button name="submit" class="btnAction" onClick="sendContact();">
+                Send
+              </button>
+            </div>
+          </div>
         </main>
       </div>
     </div>
@@ -1527,7 +1581,7 @@
 
     <div class="whatsapp-icon">
       <a
-        href="https://wa.me/8801773127733?text=Hello%20Jisan!%20I%20just%20viewed%20your%20portfolio%20and%20was%20really%20impressed%20by%20your%20creative%20designs.%20I%20would%20love%20to%20connect%20with%20you%20and%20talk%20about%20a%20potential%20collaboration."
+        href="https://wa.me/8801773127733?text=Hello%20Jillur!%20I%20just%20viewed%20your%20portfolio%20and%20was%20really%20impressed%20by%20your%20creative%20designs.%20I%20would%20love%20to%20connect%20with%20you%20and%20talk%20about%20a%20potential%20collaboration."
         target="_blank"
         rel="noopener noreferrer"
         title="Click to send a WhatsApp message"

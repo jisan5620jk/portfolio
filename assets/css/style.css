@@ -48,7 +48,7 @@ main {
   display: inline-block;
   padding: 5px 20px;
   border-radius: 30px;
-  border: 1px solid rgb(255 255 255 / 10%);
+  border: 1px solid rgb(255 255 255 / 15%);
   margin-bottom: 28px;
   transition: all 0.5s;
 }
@@ -98,7 +98,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgb(255 255 255 / 10%);
+  border: 1px solid rgb(255 255 255 / 15%);
   border-radius: 50%;
   font-size: 24px;
   background-color: transparent;
@@ -125,28 +125,61 @@ section.portfolio-sidebar {
 }
 
 .portfolio-profile {
-  border-right: 1px solid rgb(255 255 255 / 10%);
-  border-bottom: 1px solid rgb(255 255 255 / 10%);
+  border-right: 1px solid rgb(255 255 255 / 15%);
+  border-bottom: 1px solid rgb(255 255 255 / 15%);
   padding: 42px 0 38px;
 }
 
 .portfolio-profile-thumb {
   border-radius: 50%;
-  border: 7px solid;
-  border-color: #4e5752;
   transition: all 0.5s;
   display: inline-block;
   overflow: hidden;
+  position: relative;
 }
 
-.portfolio-profile-thumb:hover {
-  border-color: var(--primary-color);
+.portfolio-profile-thumb::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 7px solid var(--primary-color);
+  border-radius: 50%;
+  transform: scale(1.1);
+  transition: all 0.5s;
+  z-index: 1;
+}
+
+.portfolio-profile-thumb::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 7px solid rgb(255 255 255 / 15%);
+  border-radius: 50%;
+  transform: scale(1);
+  transition: all 1s;
+  z-index: 1;
+}
+
+.portfolio-profile-thumb:hover::before {
+  transform: scale(1);
+}
+
+.portfolio-profile-thumb:hover::after {
+  transform: scale(0);
 }
 
 .portfolio-profile-thumb img {
+  border-radius: 50%;
   transition: all 0.5s;
   filter: saturate(0);
-  width: 220px;
+  width: 234px;
+  padding: 6px;
 }
 
 .portfolio-profile-thumb:hover img {
@@ -162,7 +195,7 @@ section.portfolio-sidebar {
 }
 
 nav.portfolio-navbar {
-  border-right: 1px solid rgb(255 255 255 / 10%);
+  border-right: 1px solid rgb(255 255 255 / 15%);
   padding: 84px 0px 84px 120px;
   text-align: left;
 }
@@ -198,8 +231,8 @@ nav.portfolio-navbar ul li a:hover {
 }
 
 .portfolio-social {
-  border-right: 1px solid rgb(255 255 255 / 10%);
-  border-top: 1px solid rgb(255 255 255 / 10%);
+  border-right: 1px solid rgb(255 255 255 / 15%);
+  border-top: 1px solid rgb(255 255 255 / 15%);
   padding: 12px 0;
 }
 
@@ -382,7 +415,7 @@ a.banner-play-btn {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 1px solid rgb(255 255 255 / 10%);
+  border: 1px solid rgb(255 255 255 / 15%);
   overflow: hidden;
   line-height: 150px;
   text-align: center;
@@ -456,7 +489,7 @@ section.about-section .portfolio-section-title h1 {
   display: inline-block;
   background: transparent;
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.23);
+  border: 1px solid rgb(255 255 255 / 15%);
   padding: 20px 30px;
   border-radius: 15px;
   overflow: hidden;
@@ -608,7 +641,7 @@ section.services-section {
   border-radius: 15px;
   background: transparent;
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.23);
+  border: 1px solid rgb(255 255 255 / 15%);
   padding: 50px;
   transition: all 0.5s linear;
   gap: 46px;
@@ -678,8 +711,8 @@ section.services-section {
   height: 50px;
   border-radius: 25px;
   color: var(--primary-color);
-  background-color: #0a100d;
-  border: 1px solid rgba(255, 255, 255, 0.23);
+  background-color: rgb(255 255 255 / 15%);
+  border: 1px solid rgb(255 255 255 / 15%);
   font-size: 20px;
   text-align: center;
   line-height: 50px;
@@ -714,29 +747,13 @@ section.skill-section {
 }
 
 .skill-item-box {
-  border-radius: 17px;
-  background-color: var(--primary-color);
-  position: relative;
-  padding: 50px 0 40px;
-  z-index: 1;
-}
-
-.skill-item-box:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #141a17;
+  background-color: transparent;
   backdrop-filter: blur(8px);
-  content: "";
+  padding: 50px 0 40px;
   border-radius: 15px 60px 15px 15px;
-  transition: all 0.5s;
-  z-index: -1;
-}
-
-.skill-single-item:hover .skill-item-box:before {
-  border-radius: 15px 100px 15px 100px;
+  border: 1px solid rgb(255 255 255 / 15%);
+  position: relative;
+  z-index: 1;
 }
 
 .skill-item-percent {
@@ -776,10 +793,6 @@ section.skill-section {
 
 section.portfolio-section {
   padding-top: 100px;
-}
-
-section.portfolio-section .portfolio-section-title h1 {
-  width: 62%;
 }
 
 .portfolio-item {
@@ -902,9 +915,9 @@ section.testimonial-section {
   background: transparent;
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.23);
-  padding: 45px 45px 34px;
+  padding: 45px 40px 34px;
   position: relative;
-  width: 97.5% !important;
+  width: 93% !important;
 }
 
 .testimonial-profile {
@@ -919,7 +932,7 @@ section.testimonial-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgb(255 255 255 / 10%);
+  border: 1px solid rgb(255 255 255 / 15%);
   border-radius: 50%;
   font-size: 34px;
 }
@@ -939,8 +952,8 @@ section.testimonial-section {
 }
 
 .testimonial-desc p {
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 22px;
+  line-height: 34px;
   color: #ffffff;
   font-weight: 400;
   margin: 25px 0 23px;
@@ -954,12 +967,12 @@ section.testimonial-section {
 }
 
 .testimonial-box-rate {
-  border: 1px solid rgba(255, 255, 255, 0.23);
+  border: 1px solid rgb(255 255 255 / 15%);
   display: inline-block;
   padding: 9px 20px 5px;
   border-radius: 5px 5px 0 5px;
   position: absolute;
-  top: 60px;
+  top: 56px;
   right: -20px;
 }
 
@@ -974,7 +987,7 @@ section.testimonial-section {
   right: -12px;
   width: 1px;
   height: 26px;
-  border-right: 1px solid rgba(255, 255, 255, 0.23);
+  border-right: 1px solid rgb(255 255 255 / 15%);
   transform: rotate(45deg);
 }
 
@@ -990,7 +1003,7 @@ span.slick-next {
 
 span.slick-prev {
   position: absolute;
-  left: 8.1rem;
+  left: 15%;
   bottom: -5.3rem;
 }
 
@@ -999,8 +1012,8 @@ span.slick-next {
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.23);
-  color: rgba(255, 255, 255, 0.23);
+  border: 1px solid rgb(255 255 255 / 15%);
+  color: rgb(255 255 255 / 15%);
   display: inline-block;
   text-align: center;
   line-height: 40px;
@@ -1040,7 +1053,7 @@ section.pricing-section {
   background: transparent;
   backdrop-filter: blur(8px);
   padding: 35px;
-  border: 1px solid rgba(255, 255, 255, 0.23);
+  border: 1px solid rgb(255 255 255 / 15%);
   position: relative;
   overflow: hidden;
   transition: all 0.5s;
@@ -1133,7 +1146,7 @@ section.pricing-section {
   border-radius: 26px;
   background: transparent;
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.23);
+  border: 1px solid rgb(255 255 255 / 15%);
   text-align: center;
   font-size: 16px;
   line-height: 30px;
@@ -1177,7 +1190,7 @@ section.pricing-section {
   border-radius: 20px;
   background: transparent;
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.23);
+  border: 1px solid rgb(255 255 255 / 15%);
   display: inline-block;
   padding: 4px 22px;
   position: absolute;
@@ -1195,7 +1208,7 @@ section.pricing-section {
   color: var(--primary-color);
   font-weight: 500;
   padding: 4px 22px;
-  border: 1px solid rgba(255, 255, 255, 0.23);
+  border: 1px solid rgb(255 255 255 / 15%);
   transform: rotate(48deg);
   position: absolute;
   width: 270px;
@@ -1287,7 +1300,7 @@ form.contact-form {
   background: #2a2e2c36;
   backdrop-filter: blur(8px);
   padding: 30px 30px 40px;
-  border: 1px solid rgba(255, 255, 255, 0.23);
+  border: 1px solid rgb(255 255 255 / 15%);
   margin-top: 66px;
 }
 
@@ -1317,7 +1330,7 @@ form.contact-form input {
   padding: 10px 26px;
   margin-bottom: 18px;
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.23);
+  border: 1px solid rgb(255 255 255 / 15%);
 }
 
 form.contact-form input::placeholder,
@@ -1330,7 +1343,7 @@ form.contact-form textarea::placeholder {
   border-radius: 6px;
   background-color: #ffffff17;
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.23);
+  border: 1px solid rgb(255 255 255 / 15%);
   padding: 10px 20px;
   margin-bottom: 30px;
   resize: none;
@@ -1345,7 +1358,7 @@ form.contact-form textarea::placeholder {
   height: 55px;
   border-radius: 10px;
   background-color: #ffffff17;
-  border: 1px solid rgba(255, 255, 255, 0.23);
+  border: 1px solid rgb(255 255 255 / 15%);
   width: 100%;
   font-size: 15px;
   letter-spacing: 0px;
@@ -1398,7 +1411,7 @@ form.contact-form textarea::placeholder {
 ul.slick-dots li {
   height: 8px;
   width: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.23);
+  border: 1px solid rgb(255 255 255 / 15%);
   text-align: center;
   border-radius: 20px;
   line-height: 5px;

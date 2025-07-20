@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Contact Form</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    input, textarea { display: block; margin: 10px 0; width: 100%; padding: 8px; }
+    .response { margin-top: 15px; color: green; }
+  </style>
+</head>
+<body>
+
+  <h2>Contact Us</h2>
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="response" id="responseMsg"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $('#contactForm').on('submit', function(e) {
+      e.preventDefault(); // Stop default form submission
+
+      $.ajax({
+        url: 'process.php', // PHP file to process form
+        type: 'POST',
+        data: $(this).serialize(),
+        success: function(response) {
+          $('#responseMsg').html(response);
+          $('#contactForm')[0].reset();
+        },
+        error: function() {
+          $('#responseMsg').html('Something went wrong. Please try again.');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

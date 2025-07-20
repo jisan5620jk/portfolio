@@ -112,7 +112,31 @@
         '<span class="slick-next"><i class="bi bi-arrow-left"></i></span>',
       speed: 1000,
       fade: false,
+      slidesToShow: 2,
       cssEase: "ease",
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
     });
   });
 
@@ -229,5 +253,4 @@
   sections.forEach((section) => {
     observer.observe(section);
   });
-
 })(window.jQuery);
